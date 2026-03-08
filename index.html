@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+
+
+    <title>GitHub Issues Tracker || Login</title>
+    <link rel="icon" type="image/x-icon" href="./assets/github-logo.png">
+
+
+</head>
+
+<body class="flex items-center justify-center bg-gray-50 px-2">
+
+    <section class="w-5/6 mx-auto bg-white shadow-lg rounded-lg p-8 mt-5 max-w-xl">
+
+        <div class="text-center mb-6">
+            <img class="mx-auto" src="./assets/github-logo.png" alt="github-logo">
+
+            <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+            <p class="text-[#64748B]">Sign in to manage your issues</p>
+        </div>
+
+
+        <div>
+            <label for="username-input" class="font-semibold">Username</label>
+            <br>
+            <input id="username-input" class="w-full rounded-md py-1.5 pl-2.5 border-2 border-[#E4E4E7]" type="text"
+                placeholder="Enter Username">
+            <p class="mb-4 mt-1 text-sm text-[#4A00FF]">Default: admin</p>
+
+            <label for="password-input" class="font-semibold">Password</label>
+            <br>
+            <input id="password-input" class="w-full rounded-md py-1.5 pl-2.5 border-2 border-[#E4E4E7]" type="password"
+                placeholder="Enter Password">
+            <p class="mb-6 mt-1 text-sm text-[#4A00FF]">Default: admin123</p>
+            <button id="sign-in-btn" class="btn btn-primary w-full rounded-lg">Sign In</button>
+        </div>
+
+
+
+        <div class="divider py-5">OR</div>
+
+        <p class="text-center mb-2 text-[#64748B] text-sm">Demo Credentials:</p>
+        <div class="text-center bg-[#f8fafc] rounded-lg p-6">
+            <p><span class="font-semibold">Username:</span> admin</p>
+            <p><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+    </section>
+
+
+    <script src="./scripts/index.js"></script>
+
+
+</body>
+
+</html>

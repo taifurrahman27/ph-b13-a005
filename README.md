@@ -48,7 +48,8 @@ This approach helps make the code simpler and easier to understand.
 
     - 5️⃣ What are template literals?
 
-    Template literals are strings that  we write with backticks (``) and they let us include variables or expressions using ${}.
+    Template literals are strings that  we write with backticks (``) 
+    and they let us include variables or expressions using ${}.
 
 For example:
 
