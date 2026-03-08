@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>GitHub Issues Tracker || Homepage</title>
+    <link rel="icon" type="image/x-icon" href="./assets/github-logo.png">
+
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <nav
+            class="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0 px-2 md:px-10 lg:px-20 py-4 bg-white shadow">
+
+            <div>
+                <h1 class="flex items-center gap-1">
+                    <img src="./assets/github-logo.png" alt="GitHub Logo" class="w-9">
+                    <span class="text-2xl font-semibold">GitHub Issues Tracker</span>
+                </h1>
+            </div>
+
+            <div class="flex justify-end items-center gap-4">
+
+                <div>
+                    <label for="search-input" class="input flex items-center gap-2">
+                        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                                stroke="currentColor">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.3-4.3"></path>
+                            </g>
+                        </svg>
+                        <input id="search-input" type="search" required placeholder="Search issues..." />
+                    </label>
+                </div>
+
+
+                <div>
+                    <button class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i> New Issue
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main class="px-6 md:max-w-11/12 lg:max-w-10/12 mx-auto mt-5 md:mt-8 lg:mt-[60px]">
+
+        <section class="bg-white shadow md:rounded-md p-2 md:p-4 lg:p-6 space-x-2 flex md:justify-start items-center">
+            <button id="all-btn" class="filter-btn btn btn-primary w-[100px] md:w-[120px]">All</button>
+            <button id="open-btn" class="filter-btn btn w-[100px] md:w-[120px]">Open</button>
+            <button id="closed-btn" class="filter-btn btn w-[100px] md:w-[120px]">Closed</button>
+        </section>
+
+
+        <section class="mt-4">
+            <div
+                class="flex flex-col gap-4 p-2 md:flex-row justify-between bg-white shadow md:rounded-t-md border-b-2 border-[#e4e4e7] lg:p-6">
+                <div class="flex items-center gap-1 md:gap-2">
+                    <div>
+                        <img class="bg-[#ECE4FF] p-[9px] md:w-full rounded-full" src="./assets/Aperture.png"
+                            alt="Aperture">
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-xl font-semibold"><span id="total-issues">0</span> Issues</h3>
+                        <p class="text-sm md:text-base text-[#64748B]">Track and manage your project issues</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-center justify-end md:justify-start">
+                    <p class="flex items-center gap-2 font-medium"><span
+                            class="w-3.5 h-3.5 rounded-full bg-[#00A96E] inline-block"> </span><span>Open</span></p>
+                    <p class="flex items-center gap-2 font-medium"><span
+                            class="w-3.5 h-3.5 rounded-full bg-[#A855F7] inline-block"></span> <span>Closed</span></p>
+                </div>
+            </div>
+
+            <section id="spinner" class="hidden min-h-[300px]">
+                <div class="flex justify-center items-center h-[300px]">
+                    <span class="loading loading-dots loading-xl"></span>
+                </div>
+            </section>
+
+
+            <div id="issues-card-container"
+                class="bg-white shadow p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
+
+
+            </div>
+
+        </section>
+
+
+        <section>
+            <dialog id="my_modal" class="modal">
+                <div class="modal-box">
+
+                    <div id="modal-container">
+
+                    </div>
+
+
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn btn-primary">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+    </main>
+
+
+
+    <script src="./scripts/main.js"></script>
+
+
+</body>
+
+
+</html>
