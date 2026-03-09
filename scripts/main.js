@@ -134,7 +134,7 @@ function showModal(getData) {
     modalContainer.innerHTML = `
         <h2 class="text-xl md:text-2xl font-bold mb-2">${getData.title}</h2>
         <div class="flex items-center gap-2 mb-6">
-            <p class="${dotColors} text-xs px-2 py-1 rounded-full text-white inline-block capitalize">${getData.status}</p>
+            <p class="${dotColors} text-xs px-3 py-1.5 rounded-full text-white inline-block capitalize">${getData.status}</p>
             <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
             <p class="text-xs text-[#64748B]">${getData.author}</p>
             <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
@@ -163,4 +163,22 @@ function showModal(getData) {
 }
 
 
+
+const searchInput = document.getElementById("search-input");
+const allBtn = document.getElementById("all-btn");
+
+searchInput.addEventListener("input", async (e) => {
+    const searchText = e.target.value.toLowerCase();
+
+    filterBtn.forEach(button => button.classList.remove("btn-primary"));
+    allBtn.classList.add("btn-primary");
+
+    if (searchText.length > 0) {
+        const response = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
+        const data = await response.json();
+        displayIssues(data.data);
+    } else {
+        loadAllIssues();
+    }
+});
 
